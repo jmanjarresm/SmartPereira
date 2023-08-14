@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Chat con Pereira</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Chat con Pereira</h1>
+    <div id="chat-container">
+        <div id="chat-history"></div>
+        <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+        <button id="send-btn">Enviar</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#send-btn").on("click", function () {
+                var user_input = $("#user-input").val();
+                $("#chat-history").append("<p>Tú: " + user_input + "</p>");
+                $("#user-input").val("");
+                $.post("/get_response", { user_input: user_input }, function (data) {
+                    $("#chat-history").append("<p>Pereira: " + data.bot_response + "</p>");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
