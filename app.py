@@ -4,6 +4,7 @@ import json
 import os
 
 app = Flask(__name__)
+app.static_folder = 'static'
 
 API_URL = "https://flowisetest-1.onrender.com/api/v1/prediction/d6b86562-b09b-43cd-876f-73a12e07e60b"
 

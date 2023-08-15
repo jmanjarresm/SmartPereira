@@ -1,28 +1,16 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>Chat con Pereira</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div id="page-container">
-        <header>
-            <h1>Alcaldía de Pereira</h1>
-        </header>
-        <main>
-            <section id="chat-container">
-                <div id="chat-history"></div>
-                <div id="input-container">
-                    <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
-                    <button id="send-btn">Enviar</button>
-                </div>
-            </section>
-        </main>
-        <footer>
-            &copy; 2023 Municipio de Pereira, Colombia
-        </footer>
+    <h1>Chat con Pereira</h1>
+    <div id="chat-container">
+        <div id="chat-history"></div>
+        <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+        <button id="send-btn">Enviar</button>
     </div>
+
     <script>
         $(document).ready(function () {
             $("#send-btn").on("click", function () {
@@ -37,4 +25,3 @@
     </script>
 </body>
 </html>
-

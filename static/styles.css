@@ -1,0 +1,75 @@
+body, h1, p, ul, li, input, button {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Set a global font */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Main content styles */
+#page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #072240; /* Dark blue */
+    padding: 10px 0;
+    color: white;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+#chat-container {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+#chat-history {
+    margin-bottom: 20px;
+}
+
+#input-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+#send-btn {
+    background-color: #072240; /* Dark blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#send-btn:hover {
+    background-color: #051829; /* Slightly darker blue */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
