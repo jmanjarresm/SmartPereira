@@ -3,8 +3,8 @@ import requests
 import json
 import os
 
-app = Flask(__name__)
-app.static_folder = 'static'
+app2 = Flask(__name__)
+app2.static_folder = 'static'
 
 API_URL = "https://flowisetest-1.onrender.com/api/v1/prediction/dbaf12c5-c585-42e3-a057-ce4e41dbbd26"
 
@@ -16,7 +16,7 @@ def query(payload):
     except json.JSONDecodeError:
         return {"error": "Invalid response from API"}
 
-@app.route("/", methods=["GET", "POST"])
+@app2.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         user_input = request.form.get("user_input")
@@ -26,7 +26,7 @@ def index():
             return render_template("index.html", user_input=user_input, bot_response=bot_response)
     return render_template("index.html", user_input="", bot_response="")
 
-@app.route("/get_response", methods=["POST"])
+@app2.route("/get_response", methods=["POST"])
 def get_response():
     user_input = request.form.get("user_input")
     if user_input.strip() != "":
@@ -37,4 +37,4 @@ def get_response():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app2.run(host='0.0.0.0', port=port)
